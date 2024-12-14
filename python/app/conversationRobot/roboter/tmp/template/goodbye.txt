@@ -1,0 +1,2 @@
+$user_nameさん、さようなら。良い1日を！
+Goodbye $user_name. Have a nice day!

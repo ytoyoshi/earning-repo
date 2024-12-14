@@ -1,0 +1,1 @@
+TEMPLATE_PATH='roboter/tmp/template'

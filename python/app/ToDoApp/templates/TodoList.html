@@ -1,0 +1,28 @@
+{%extends 'base.html' %}
+{%block header%}
+<div class="bg-body-tertiary p-3 p-sm-5">
+    <div class="container">
+        <h1 class="display-4">Todolist</h1>
+        <p>Manage your daily tasks and have a fulfilling day!</p>
+    </div>
+</div>
+{%endblock header%}
+
+{%block content%}
+<div class="container">
+    <a href="{%url 'create' %}" class="btn btn-success active mb-3" role="button" aria-pressed="true">Create New Task</a>
+    {%for item in object_list%}
+    <div class="alert alert-primary" role="alert">
+        <p>{{item.title}}</p>
+        <form style="display: inline" method="get" action="{%url 'detail' item.pk %}" >
+            {%csrf_token%}
+            <button class="btn btn-secondary active" type="submit" aria-pressed="true">Detail</button>
+        </form>
+        <form style="display: inline" method="post" action="{%url 'complete' item.id %}" >
+            {%csrf_token%}
+            <button class="btn btn-primary active" type="submit" onclick="return confirm('Are you done?')" aria-pressed="true">Complete</button>
+        </form>
+    </div>
+    {%endfor%}
+</div>
+{%endblock content%}

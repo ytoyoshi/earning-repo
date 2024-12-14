@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block header%}
+<div class="bg-body-tertiary p-3">
+    <div class="container">
+        <h1 class="display-6">Create New Task</h1>
+    </div>
+</div>
+{%endblock header%}
+{%block content%}
+<div class="container">
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">{{form.title.label}}</label>
+      <div class="col-sm-10">{{form.title}}</div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">{{form.memo.label}}</label>
+      <div class="col-sm-10">{{form.memo}}</div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">{{form.priÏority.label}}</label>
+      <div class="col-sm-10">{{form.priority}}</div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">{{form.deadline.label}}</label>
+      <div class="col-sm-10">{{form.deadline}}</div>
+    </div>
+    <input type="submit" value="create" class="btn btn-primary" />
+  </form>
+</div>
+
+{%endblock content%}
